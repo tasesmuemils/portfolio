@@ -1,10 +1,11 @@
 import React from "react";
+import "normalize.css";
 
 function HomePage() {
   return (
-    <main>
-      <h1>Portfolio</h1>
-    </main>
+    <>
+      <h1>This is homepage</h1>
+    </>
   );
 }
 
