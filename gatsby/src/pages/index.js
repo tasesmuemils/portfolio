@@ -1,10 +1,19 @@
 import React from "react";
 import "normalize.css";
 
+// Compoents
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Tools from "../components/Tools";
+import Projects from "../components/Projects";
+
 function HomePage() {
   return (
     <>
-      <h1>This is homepage</h1>
+      <Hero />
+      <About />
+      <Tools />
+      <Projects />
     </>
   );
 }
