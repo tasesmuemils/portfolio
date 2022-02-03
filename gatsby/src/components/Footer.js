@@ -7,19 +7,20 @@ import GithubIcon from "../assets/Github_Icon.svg";
 import TwitterIcon from "../assets/Twitter_Icon.svg";
 // Styles
 import styled from "styled-components";
+import { device } from "./mediaQueries";
 
 const FooterStyle = styled.div`
   background-color: var(--purple);
-  /* * {
-    border: red 1px solid;
-  } */
   .shapes-wrapper {
     position: absolute;
-    bottom: 4em;
-    left: 0;
+    bottom: 5em;
+    left: 3em;
     transform: rotate(90deg);
     svg {
-      width: 70%;
+      width: 65%;
+      .circleShadow {
+        filter: drop-shadow(4px 0px 4px rgba(0, 0, 0, 0.25));
+      }
     }
   }
 
@@ -36,13 +37,15 @@ const FooterStyle = styled.div`
     .email {
       font-style: normal;
       font-weight: 300;
-      font-size: 31px;
+      font-size: 27px;
       line-height: 46px;
       letter-spacing: 0.03em;
       padding-bottom: 10px;
     }
 
     .footer-icons-list {
+      margin: 0;
+      padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -53,6 +56,74 @@ const FooterStyle = styled.div`
         svg path {
           fill: var(--white);
         }
+      }
+    }
+
+    .footer-description {
+      p {
+        margin: 0;
+        padding: 0;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 25px;
+        letter-spacing: 0.03em;
+      }
+    }
+  }
+
+  // Responsive styling
+  @media ${device.laptop} {
+    .shapes-wrapper {
+      bottom: -1.5em;
+      left: 2em;
+      svg {
+        width: 50%;
+      }
+    }
+
+    .footer-content {
+      padding-top: 100px;
+      padding-bottom: 50px;
+
+      .email {
+        font-size: 20px;
+        padding-bottom: 0px;
+      }
+
+      .footer-icons-list {
+        padding-bottom: 20px;
+        li {
+          padding: 0 15px;
+          svg {
+            width: 20px;
+          }
+        }
+      }
+
+      .footer-description {
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  @media ${device.tablet} {
+    .shapes-wrapper {
+      bottom: 7em;
+      left: 3em;
+      svg {
+        height: 100%;
+        width: 40%;
+      }
+    }
+
+    .footer-content {
+      padding-top: 70px;
+
+      .email {
+        font-size: 18px;
       }
     }
   }
@@ -79,8 +150,10 @@ export default function Footer() {
               <TwitterIcon />
             </li>
           </ul>
-          <p>Created with Gatsby</p>
-          <p>&#169; {new Date().getFullYear()} Emils Bisenieks</p>
+          <div className="footer-description">
+            <p>Created with Gatsby</p>
+            <p>&#169; {new Date().getFullYear()} Emils Bisenieks</p>
+          </div>
         </div>
       </div>
     </FooterStyle>

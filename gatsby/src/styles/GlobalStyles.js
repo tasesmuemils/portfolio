@@ -1,5 +1,6 @@
+// Style
 import { createGlobalStyle } from "styled-components";
-
+import { device } from "../components/mediaQueries";
 const GlobalStyles = createGlobalStyle`
 
     * {
@@ -20,9 +21,19 @@ const GlobalStyles = createGlobalStyle`
 
     .wrapper {
         position: relative;
-        max-width: 1200px;
+        max-width: 1350px;
         margin: 0 auto;
+
+        @media ${device.laptopL} {
+            max-width: 950px;
+        }
+
+        @media ${device.laptop} {
+            max-width: 700px;
+        }
     }
+
+    
 
 `;
 

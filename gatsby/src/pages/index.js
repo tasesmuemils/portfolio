@@ -25,7 +25,7 @@ export default function HomePage({ data }) {
 // Query for Project images
 export const query = graphql`
   query ProjectImages {
-    allImageSharp {
+    allImageSharp(sort: { fields: id, order: DESC }) {
       edges {
         node {
           fluid {

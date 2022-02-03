@@ -2,6 +2,7 @@
 import React from "react";
 // Styling
 import styled from "styled-components";
+import { device } from "./mediaQueries";
 // Components
 import ElipseOrange from "../assets/Elipse_1.svg";
 import ElipseBlue from "../assets/Elipse_2.svg";
@@ -10,23 +11,19 @@ const AboutStyle = styled.div`
   display: grid;
   justify-content: center;
   text-align: center;
-  padding: 50px 200px;
+  padding: 150px 100px;
 
-  h2 {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 39px;
-    line-height: 41px;
-    letter-spacing: 0.02em;
+  // Responsive design
+  @media ${device.laptopL} {
+    padding: 100px 50px;
   }
 
-  p {
-    color: #333333;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 35px;
-    letter-spacing: 0.02em;
+  @media ${device.laptop} {
+    padding: 70px 20px;
+  }
+
+  @media ${device.tablet} {
+    padding: 100px 30px;
   }
 `;
 
@@ -34,6 +31,14 @@ const ElipseOrangeStyle = styled.div`
   position: absolute;
   top: -20%;
   z-index: -1;
+
+  @media ${device.laptop} {
+    top: -40%;
+  }
+
+  @media ${device.laptop} {
+    display: none;
+  }
 `;
 
 const ElipseBlueStyle = styled.div`
@@ -42,6 +47,10 @@ const ElipseBlueStyle = styled.div`
   bottom: -20%;
   /* top: -20%; */
   z-index: -1;
+
+  @media ${device.laptop} {
+    bottom: -50%;
+  }
 `;
 
 export default function About() {
