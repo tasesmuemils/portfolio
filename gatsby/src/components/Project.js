@@ -139,6 +139,43 @@ const ProjectStyle = styled.div`
       }
     }
   }
+
+  @media ${device.mobileL} {
+    padding-bottom: 80px;
+    .project-info {
+      padding-bottom: 10px;
+
+      .project-logos {
+        svg {
+          width: 40%;
+        }
+      }
+    }
+  }
+
+  @media ${device.mobileM} {
+    margin: 0 10px;
+    .project-info {
+      .project-logos {
+        svg {
+          width: 70%;
+        }
+      }
+      .buttons-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        button {
+          margin: 0 auto 10px auto;
+          width: 50%;
+          font-size: 13px;
+        }
+      }
+    }
+
+    .project-img-wrapper {
+      padding: 5px;
+    }
+  }
 `;
 
 export default function Project({

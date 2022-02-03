@@ -111,11 +111,11 @@ const FooterStyle = styled.div`
 
   @media ${device.tablet} {
     .shapes-wrapper {
-      bottom: 7em;
+      bottom: 8em;
       left: 3em;
       svg {
         height: 100%;
-        width: 40%;
+        width: 30%;
       }
     }
 
@@ -124,6 +124,35 @@ const FooterStyle = styled.div`
 
       .email {
         font-size: 18px;
+      }
+    }
+  }
+  @media ${device.mobileL} {
+    .shapes-wrapper {
+      bottom: 8.5em;
+      left: 0em;
+      svg {
+        width: 30%;
+      }
+    }
+
+    .footer-content {
+      .email {
+        font-size: 15px;
+      }
+    }
+  }
+
+  @media ${device.mobileM} {
+    .footer-content {
+      .email {
+        font-size: 10px;
+      }
+
+      .footer-description {
+        p {
+          font-size: 10px;
+        }
       }
     }
   }

@@ -31,6 +31,10 @@ const GlobalStyles = createGlobalStyle`
         @media ${device.laptop} {
             max-width: 700px;
         }
+
+        @media ${device.mobileS} {
+            max-width: 240px;
+        }
     }
 
     

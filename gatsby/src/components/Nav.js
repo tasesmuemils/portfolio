@@ -7,12 +7,18 @@ import { device } from "./mediaQueries";
 import InstagramIcon from "../assets/Instagram_Icon.svg";
 import GithubIcon from "../assets/Github_Icon.svg";
 import TwitterIcon from "../assets/Twitter_Icon.svg";
+// Components
+import Logo from "../assets/EB_logo.svg";
 
 const Navigation = styled.nav`
+  * {
+    /* border: 1px solid red; */
+  }
   display: grid;
   grid-template-columns: 2fr 1fr;
   justify-content: center;
   color: var(--white);
+  padding-top: 10px;
 
   li {
     list-style: none;
@@ -24,8 +30,10 @@ const Navigation = styled.nav`
     align-items: center;
 
     .logo {
-      h2 {
-        font-size: 2.5em;
+      display: flex;
+      align-items: center;
+      svg {
+        width: 15%;
       }
     }
 
@@ -113,11 +121,10 @@ const Navigation = styled.nav`
 
     .logo-nav-items {
       .logo {
-        h2 {
-          font-size: 1.2em;
+        svg {
+          width: 30%;
         }
       }
-
       .nav-items {
         justify-content: end;
         li {
@@ -131,6 +138,28 @@ const Navigation = styled.nav`
       display: none;
     }
   }
+
+  @media ${device.mobileS} {
+    padding: 0 5px;
+    grid-template-columns: 1fr;
+
+    .logo-nav-items {
+      padding-top: 10px;
+      grid-template-columns: 1fr;
+      .logo {
+        svg {
+          margin: 0 auto;
+        }
+      }
+      .nav-items {
+        justify-content: center;
+        li {
+          margin: 0 0 0 10px;
+          font-size: 15px;
+        }
+      }
+    }
+  }
 `;
 
 export default function Nav() {
@@ -138,7 +167,7 @@ export default function Nav() {
     <Navigation>
       <div className="logo-nav-items">
         <div className="logo">
-          <h2>EB</h2>
+          <Logo />
         </div>
         <ul className="nav-items">
           <li>About</li>

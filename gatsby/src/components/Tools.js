@@ -56,39 +56,54 @@ const ToolsWrapperStyle = styled.div`
   }
 
   @media ${device.tablet} {
-    h2 {
-      padding-bottom: 20px;
-    }
-    .tools-logos-wraper {
-      display: grid;
-      grid-template-columns: 1fr;
-      text-align: center;
-      justify-content: center;
-      margin: 0px 50px -100px 50px;
-      padding-top: 30px;
-      padding-bottom: 40px;
-      * {
-        padding: 0px;
+    .tools-wrapper {
+      padding-top: 70px;
+      h2 {
+        padding-bottom: 20px;
       }
+      .tools-logos-wraper {
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-content: center;
+        margin: 0px 50px -100px 50px;
+        padding-top: 30px;
+        padding-bottom: 40px;
+        * {
+          padding: 0px;
+        }
 
-      svg {
-        margin: auto;
-        padding: 10px 0;
-        width: 80%;
-        height: 100%;
+        svg {
+          margin: auto;
+          padding: 10px 0;
+          width: 80%;
+          height: 100%;
+        }
       }
     }
   }
 
   @media ${device.mobileL} {
-    .tools-logos-wraper {
-      margin: 0px 20px -100px 20px;
-      padding-top: 20px;
-      padding-bottom: 20px;
+    .tools-wrapper {
+      padding-top: 50px;
+      .tools-logos-wraper {
+        margin: 0px 20px -100px 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
 
-      svg {
-        width: 90%;
-        height: 60%;
+        svg {
+          width: 90%;
+          height: 60%;
+        }
+      }
+    }
+  }
+
+  @media ${device.mobileM} {
+    .tools-wrapper {
+      padding-top: 20px;
+      .tools-logos-wraper {
+        margin: 0px 10px -70px 10px;
       }
     }
   }

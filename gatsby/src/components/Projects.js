@@ -31,6 +31,18 @@ const ProjectsStyle = styled.div`
       padding: 200px 0 0px 0;
     }
   }
+
+  @media ${device.mobileL} {
+    .projects-wrapper {
+      padding: 200px 0 50px 0;
+    }
+  }
+
+  @media ${device.mobileS} {
+    .projects-wrapper {
+      padding: 120px 0 50px 0;
+    }
+  }
 `;
 
 export default function Projects({ projectsImg }) {

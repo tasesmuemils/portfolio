@@ -61,15 +61,12 @@ const HeroWrapperStyle = styled.div`
   }
 
   @media ${device.mobileL} {
-    @media ${device.tablet} {
-      .shapes-wrapper {
-        width: 50%;
-        .shape {
-          height: 100%;
-          top: 53%;
-          width: 15%;
-          left: 30%;
-        }
+    .shapes-wrapper {
+      .shape {
+        height: 40%;
+        top: 82%;
+        width: 15%;
+        left: 30%;
       }
     }
   }
@@ -156,6 +153,24 @@ const HeroStyle = styled.div`
       .hero-content-wrapper {
         h1 {
           font-size: 2em;
+        }
+      }
+    }
+  }
+
+  @media ${device.mobileM} {
+    .hero-content {
+      margin-top: 50px;
+      margin-bottom: 100px;
+
+      .hero-content-wrapper {
+        h1 {
+          font-size: 1.5em;
+        }
+
+        h3 {
+          font-size: 0.7em;
+          padding-bottom: 15px;
         }
       }
     }

@@ -25,6 +25,10 @@ const AboutStyle = styled.div`
   @media ${device.tablet} {
     padding: 100px 30px;
   }
+
+  @media ${device.mobileM} {
+    padding: 50px 10px;
+  }
 `;
 
 const ElipseOrangeStyle = styled.div`
@@ -50,6 +54,10 @@ const ElipseBlueStyle = styled.div`
 
   @media ${device.laptop} {
     bottom: -50%;
+  }
+
+  @media ${device.tablet} {
+    display: none;
   }
 `;
 
