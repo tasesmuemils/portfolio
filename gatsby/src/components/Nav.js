@@ -1,5 +1,6 @@
 // Main packages
 import React from "react";
+import { Link } from "gatsby";
 // Styling
 import styled from "styled-components";
 import { device } from "./mediaQueries";
@@ -11,9 +12,6 @@ import TwitterIcon from "../assets/Twitter_Icon.svg";
 import Logo from "../assets/EB_logo.svg";
 
 const Navigation = styled.nav`
-  * {
-    /* border: 1px solid red; */
-  }
   display: grid;
   grid-template-columns: 2fr 1fr;
   justify-content: center;
@@ -41,6 +39,11 @@ const Navigation = styled.nav`
       display: flex;
       justify-content: center;
 
+      a {
+        color: var(--white);
+        text-decoration: none;
+      }
+
       li {
         text-align: center;
         padding: 0 1.25em;
@@ -55,7 +58,6 @@ const Navigation = styled.nav`
   .nav-icons {
     display: flex;
     justify-content: end;
-    /* padding-left: 20px; */
 
     li {
       padding: 0 25px;
@@ -65,14 +67,29 @@ const Navigation = styled.nav`
       svg {
         width: 30px;
       }
+
+      svg:hover {
+        path {
+          fill: var(--purple);
+          transition: all 0.2s ease;
+        }
+      }
     }
   }
 
   // Responsive design
   @media ${device.laptopL} {
-    .nav-icons {
-      li {
-        padding: 0 20px;
+    .logo-nav-items {
+      .logo {
+        svg {
+          width: 20%;
+        }
+      }
+      .nav-items {
+        li {
+          padding: 0 20px;
+          font-size: 20px;
+        }
       }
     }
   }
@@ -122,7 +139,7 @@ const Navigation = styled.nav`
     .logo-nav-items {
       .logo {
         svg {
-          width: 30%;
+          width: 15%;
         }
       }
       .nav-items {
@@ -136,6 +153,16 @@ const Navigation = styled.nav`
 
     .nav-icons {
       display: none;
+    }
+  }
+
+  @media ${device.mobileL} {
+    .logo-nav-items {
+      .logo {
+        svg {
+          width: 20%;
+        }
+      }
     }
   }
 
@@ -170,19 +197,41 @@ export default function Nav() {
           <Logo />
         </div>
         <ul className="nav-items">
-          <li>About</li>
-          <li>Projects</li>
+          <Link to="/#about">
+            <li>About</li>
+          </Link>
+          <Link to="/#projects">
+            <li>Projects</li>
+          </Link>
         </ul>
       </div>
       <ul className="nav-icons">
         <li>
-          <InstagramIcon />
+          <a
+            href="https://www.instagram.com/tasesmuemils/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <InstagramIcon />
+          </a>
         </li>
         <li>
-          <GithubIcon />
+          <a
+            href="https://github.com/tasesmuemils"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <GithubIcon />
+          </a>
         </li>
         <li>
-          <TwitterIcon />
+          <a
+            href="https://mobile.twitter.com/tasesmuemils"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <TwitterIcon />
+          </a>
         </li>
       </ul>
     </Navigation>

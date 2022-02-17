@@ -6,6 +6,7 @@ import styled from "styled-components";
 import Typography from "../styles/Typography";
 // Components
 import Footer from "./Footer";
+import SEO from "./SEO";
 
 const Wrapper = styled.div`
   display: grid;
@@ -13,14 +14,19 @@ const Wrapper = styled.div`
 `;
 
 export default function Layout({ children }) {
+  const footerHeight = (height) => {
+    console.log(height, children);
+  };
+
   return (
-    <div>
+    <>
+      <SEO title={`Emils Bisenieks Portfolio`} />
       <GlobalStyles />
       <Typography />
       <Wrapper>
         {children}
-        <Footer />
+        <Footer height={footerHeight} />
       </Wrapper>
-    </div>
+    </>
   );
 }

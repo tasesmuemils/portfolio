@@ -1,6 +1,8 @@
 // Main packages
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
 // Components
+import Modal from "./Modal";
 import Shapes from "../assets/Shapes.svg";
 import InstagramIcon from "../assets/Instagram_Icon.svg";
 import GithubIcon from "../assets/Github_Icon.svg";
@@ -10,10 +12,11 @@ import styled from "styled-components";
 import { device } from "./mediaQueries";
 
 const FooterStyle = styled.div`
+  z-index: 1;
   background-color: var(--purple);
   .shapes-wrapper {
     position: absolute;
-    bottom: 5em;
+    bottom: 6em;
     left: 3em;
     transform: rotate(90deg);
     svg {
@@ -34,13 +37,22 @@ const FooterStyle = styled.div`
       margin: 0;
     }
 
-    .email {
-      font-style: normal;
-      font-weight: 300;
-      font-size: 27px;
-      line-height: 46px;
-      letter-spacing: 0.03em;
-      padding-bottom: 10px;
+    .footer-btn-wrapper {
+      padding-bottom: 30px;
+      button {
+        font-size: 20px;
+        padding: 15px 30px;
+        letter-spacing: 1px;
+        transition: all 0.5s ease;
+        background-color: var(--blue);
+        color: white;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        border-radius: 36px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      }
     }
 
     .footer-icons-list {
@@ -75,7 +87,7 @@ const FooterStyle = styled.div`
   // Responsive styling
   @media ${device.laptop} {
     .shapes-wrapper {
-      bottom: -1.5em;
+      bottom: -1em;
       left: 2em;
       svg {
         width: 50%;
@@ -86,9 +98,14 @@ const FooterStyle = styled.div`
       padding-top: 100px;
       padding-bottom: 50px;
 
-      .email {
-        font-size: 20px;
-        padding-bottom: 0px;
+      .footer-btn-wrapper {
+        padding-bottom: 10px;
+        button {
+          font-size: 15px;
+          padding: 10px 25px;
+          letter-spacing: 0.1em;
+          font-weight: 500;
+        }
       }
 
       .footer-icons-list {
@@ -111,7 +128,7 @@ const FooterStyle = styled.div`
 
   @media ${device.tablet} {
     .shapes-wrapper {
-      bottom: 8em;
+      bottom: 8.2em;
       left: 3em;
       svg {
         height: 100%;
@@ -129,7 +146,7 @@ const FooterStyle = styled.div`
   }
   @media ${device.mobileL} {
     .shapes-wrapper {
-      bottom: 8.5em;
+      bottom: 8em;
       left: 0em;
       svg {
         width: 30%;
@@ -137,13 +154,27 @@ const FooterStyle = styled.div`
     }
 
     .footer-content {
-      .email {
-        font-size: 15px;
+      .footer-btn-wrapper {
+        button {
+          font-size: 13px;
+          padding: 10px 20px;
+          letter-spacing: 0.1em;
+          font-weight: 500;
+          transition: all 0.5s ease;
+        }
       }
     }
   }
 
   @media ${device.mobileM} {
+    .shapes-wrapper {
+      bottom: 8.7em;
+
+      svg {
+        width: 25%;
+      }
+    }
+
     .footer-content {
       .email {
         font-size: 10px;
@@ -158,7 +189,22 @@ const FooterStyle = styled.div`
   }
 `;
 
-export default function Footer() {
+export default function Footer(props) {
+  // Modal state
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const close = () => setModalOpen(false);
+  const open = () => setModalOpen(true);
+
+  // Disable background scrolling
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [modalOpen]);
+
   return (
     <FooterStyle>
       <div className="wrapper">
@@ -167,16 +213,44 @@ export default function Footer() {
         </div>
 
         <div className="footer-content">
-          <p className="email">emils.bisenieks93@gmail.com</p>
+          <div className="footer-btn-wrapper">
+            <button
+              // className="contact-btn"
+              onClick={() => {
+                modalOpen ? close() : open();
+              }}
+            >
+              LETS TALK!
+            </button>
+          </div>
+
           <ul className="footer-icons-list">
             <li>
-              <InstagramIcon className="icon" />
+              <a
+                href="https://www.instagram.com/tasesmuemils/"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <InstagramIcon />
+              </a>
             </li>
             <li>
-              <GithubIcon />
+              <a
+                href="https://github.com/tasesmuemils"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <GithubIcon />
+              </a>
             </li>
             <li>
-              <TwitterIcon />
+              <a
+                href="https://mobile.twitter.com/tasesmuemils"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <TwitterIcon />
+              </a>
             </li>
           </ul>
           <div className="footer-description">
@@ -185,6 +259,13 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <AnimatePresence
+        initial={false}
+        exitBeforeEnter={true}
+        onExitComplete={() => {}}
+      >
+        {modalOpen && <Modal modalOpen={modalOpen} handleClose={close} />}
+      </AnimatePresence>
     </FooterStyle>
   );
 }

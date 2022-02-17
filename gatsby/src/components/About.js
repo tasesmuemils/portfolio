@@ -3,6 +3,7 @@ import React from "react";
 // Styling
 import styled from "styled-components";
 import { device } from "./mediaQueries";
+
 // Components
 import ElipseOrange from "../assets/Elipse_1.svg";
 import ElipseBlue from "../assets/Elipse_2.svg";
@@ -71,7 +72,7 @@ export default function About() {
         <ElipseBlue />
       </ElipseBlueStyle>
 
-      <AboutStyle>
+      <AboutStyle id="about">
         <h2>Nice to meet you</h2>
         <p>
           My name is Emils Bisenieks and I am learning front-end web

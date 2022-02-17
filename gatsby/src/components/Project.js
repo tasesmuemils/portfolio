@@ -184,6 +184,8 @@ export default function Project({
   projectDescription,
   projectLogos,
   projectImage,
+  projectLink,
+  projectCode,
 }) {
   console.log(projectImage);
   return (
@@ -194,8 +196,16 @@ export default function Project({
         <p>{projectDescription}</p>
         <div className="project-logos">{projectLogos}</div>
         <div className="buttons-wrapper">
-          <Button text="Preview" />
-          <Button text="Code" />
+          <a href={projectLink} rel="noreferrer" target="_blank">
+            <Button text="Preview" />
+          </a>
+          {projectName === "Zeltabele.lv" ? (
+            ""
+          ) : (
+            <a href={projectCode} rel="noreferrer" target="_blank">
+              <Button text="Code" />
+            </a>
+          )}
         </div>
       </div>
       <div className="project-img-wrapper">

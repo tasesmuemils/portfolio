@@ -17,7 +17,7 @@ const ProjectsStyle = styled.div`
   overflow: hidden;
 
   .projects-wrapper {
-    padding: 340px 0 0px 0;
+    padding: 500px 0 0px 0;
   }
 
   // Responsive style
@@ -54,13 +54,14 @@ export default function Projects({ projectsImg }) {
       <ElipseBlue top="50%" left="45%" />
       <ElipseOrange top="80%" left="-5%" />
       <div className="wrapper">
-        <div className="projects-wrapper">
+        <div className="projects-wrapper" id="projects">
           <Project
             project="WEBSITE"
             projectName="Zeltabele.lv"
             projectDescription="My first project for client. Website for kindergarten. A fully responsive website with many pages, implemented CMS for content editing"
             projectLogos={<Project1Icons />}
             projectImage={projectsImg[0]}
+            projectLink={"https://www.zeltabele.lv/"}
           />
           <Project
             project="WEB APP"
@@ -68,6 +69,12 @@ export default function Projects({ projectsImg }) {
             projectDescription="Web application to check stats about first generation pokemons."
             projectLogos={<Project2Icons />}
             projectImage={projectsImg[1]}
+            projectLink={
+              "https://tasesmuemils.github.io/projects/pokemon_app/index.html"
+            }
+            projectCode={
+              "https://github.com/tasesmuemils/tasesmuemils.github.io/tree/master/projects/pokemon_app"
+            }
           />
           <Project
             project="WEB APP"
@@ -75,6 +82,8 @@ export default function Projects({ projectsImg }) {
             projectDescription="Check your top Spotify tracks based on calculated affinity."
             projectLogos={<Project3Icons />}
             projectImage={projectsImg[2]}
+            projectLink={"https://spotify-stats-app-blue.vercel.app/"}
+            projectCode={"https://github.com/tasesmuemils/spotify-stats-app"}
           />
         </div>
       </div>

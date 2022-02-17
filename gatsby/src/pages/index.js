@@ -2,9 +2,6 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-// Styling
-import "normalize.css";
-
 // Compoents
 import Hero from "../components/Hero";
 import About from "../components/About";

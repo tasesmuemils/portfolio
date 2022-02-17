@@ -1,10 +1,16 @@
 // Style
 import { createGlobalStyle } from "styled-components";
 import { device } from "../components/mediaQueries";
+// Styling
+import "normalize.css";
 const GlobalStyles = createGlobalStyle`
 
     * {
         /* border: 1px solid red; */
+    }
+
+    html, body {
+        scroll-behavior: smooth;
     }
     
 
