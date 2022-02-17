@@ -1,11 +1,35 @@
+// Main packages
 import React from "react";
+import { graphql } from "gatsby";
 
-function HomePage() {
+// Compoents
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Tools from "../components/Tools";
+import Projects from "../components/Projects";
+
+export default function HomePage({ data }) {
   return (
-    <main>
-      <h1>Portfolio</h1>
-    </main>
+    <>
+      <Hero />
+      <About />
+      <Tools />
+      <Projects projectsImg={data.allImageSharp.edges} />
+    </>
   );
 }
 
-export default HomePage;
+// Query for Project images
+export const query = graphql`
+  query ProjectImages {
+    allImageSharp(sort: { fields: id, order: DESC }) {
+      edges {
+        node {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  }
+`;
