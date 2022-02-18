@@ -12,14 +12,19 @@ import Letter from "../assets/letter.svg";
 import Modal from "./Modal";
 
 const floating = keyframes`
-  from {
-    position: fixed;
+  0% {
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    /* position: fixed; */
     bottom: calc(100% - 70px);
     left: 20%;
+    
   }
 
-  to {
-    position: fixed;
+  100% {
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    /* position: fixed; */
     left: calc(100% - 80px);
     bottom: 15px;
   }
@@ -27,13 +32,17 @@ const floating = keyframes`
 
 const floatingLaptopL = keyframes`
   from {
-    position: fixed;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    /* position: fixed; */
     bottom: calc(100% - 130px);
     left: 20%;
   }
 
   to {
-    position: fixed;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    /* position: fixed; */
     left: calc(100% - 80px);
     bottom: 15px;
   }
@@ -41,13 +50,17 @@ const floatingLaptopL = keyframes`
 
 const floatingLaptop = keyframes`
   from {
-    position: fixed;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    /* position: fixed; */
     bottom: calc(100% - 75px);
     left: 20%;
   }
 
   to {
-    position: fixed;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    /* position: fixed; */
     left: calc(100% - 65px);
     bottom: 15px;
   }
@@ -55,13 +68,17 @@ const floatingLaptop = keyframes`
 
 const floatingTablet = keyframes`
   from {
-    position: fixed;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    /* position: fixed; */
     bottom: calc(100% - 75px);
     left: 0;
   }
 
   to {
-    position: fixed;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    /* position: fixed; */
     left: calc(100% - 65px);
     bottom: 15px;
   }
@@ -69,13 +86,17 @@ const floatingTablet = keyframes`
 
 const floatingMobileS = keyframes`
   from {
-    position: fixed;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    /* position: fixed; */
     bottom: calc(100% - 80px);
     left: 45%;
   }
 
   to {
-    position: fixed;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    /* position: fixed; */
     left: calc(100% - 45px);
     bottom: 15px;
   }
@@ -102,7 +123,6 @@ const HeroWrapperStyle = styled.div`
     padding: 15px 30px;
     font-size: 20px;
     letter-spacing: 1px;
-    transition: all 0.5s ease;
     background-color: var(--blue);
     color: white;
     cursor: pointer;
@@ -111,6 +131,7 @@ const HeroWrapperStyle = styled.div`
     border-radius: 36px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: all 0.5s ease;
   }
 
   .lets-talk-button {
@@ -131,9 +152,12 @@ const HeroWrapperStyle = styled.div`
 
   .floating {
     .contact-btn {
+      overflow: hidden;
+      -webkit-overflow-scrolling: touch;
       z-index: 1;
       position: fixed;
-      width: fit-content;
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
       left: calc(100% - 80px);
       bottom: 15px;
       animation: ${floating} 0.5s;
