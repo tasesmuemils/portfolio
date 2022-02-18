@@ -23,7 +23,7 @@ const Navigation = styled.nav`
 
   .logo-nav-items {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr; */
     align-items: center;
 
     .logo {
@@ -31,25 +31,6 @@ const Navigation = styled.nav`
       align-items: center;
       svg {
         width: 15%;
-      }
-    }
-
-    .nav-items {
-      display: flex;
-      justify-content: center;
-
-      a {
-        color: var(--white);
-        text-decoration: none;
-      }
-
-      li {
-        text-align: center;
-        padding: 0 1.25em;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 24px;
-        line-height: 36px;
       }
     }
   }
@@ -84,12 +65,6 @@ const Navigation = styled.nav`
           width: 20%;
         }
       }
-      .nav-items {
-        li {
-          padding: 0 20px;
-          font-size: 20px;
-        }
-      }
     }
   }
 
@@ -102,18 +77,6 @@ const Navigation = styled.nav`
           font-size: 1.5em;
           padding: 0;
           margin: 0;
-        }
-      }
-
-      .nav-items {
-        display: flex;
-        justify-content: start;
-        padding: 0;
-
-        li {
-          padding: 0em 0.5em;
-          margin: 0 10px;
-          font-size: 18px;
         }
       }
     }
@@ -132,20 +95,19 @@ const Navigation = styled.nav`
   }
 
   @media ${device.tablet} {
-    padding: 0 20px;
+    padding: 20px;
     grid-template-columns: 1fr;
+    text-align: center;
+    /* grid-template-columns: 1fr; */
+    justify-content: center;
 
     .logo-nav-items {
       .logo {
+        display: flex;
+        justify-content: center;
+        text-align: center;
         svg {
           width: 15%;
-        }
-      }
-      .nav-items {
-        justify-content: end;
-        li {
-          margin: 0 0 0 10px;
-          font-size: 15px;
         }
       }
     }
