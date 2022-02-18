@@ -1,6 +1,5 @@
 // Main packages
 import React from "react";
-import { Link } from "gatsby";
 // Styling
 import styled from "styled-components";
 import { device } from "./mediaQueries";
@@ -196,14 +195,14 @@ export default function Nav() {
         <div className="logo">
           <Logo />
         </div>
-        <ul className="nav-items">
+        {/* <ul className="nav-items">
           <Link to="/#about">
             <li>About</li>
           </Link>
           <Link to="/#projects">
             <li>Projects</li>
           </Link>
-        </ul>
+        </ul> */}
       </div>
       <ul className="nav-icons">
         <li>

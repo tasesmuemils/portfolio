@@ -160,6 +160,7 @@ const HeroWrapperStyle = styled.div`
       width: -moz-fit-content;
       left: calc(100% - 80px);
       bottom: 15px;
+      -webkit-animation: ${floating} 0.5s;
       animation: ${floating} 0.5s;
       padding: 20px;
       border-radius: 50%;
