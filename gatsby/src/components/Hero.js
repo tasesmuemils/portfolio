@@ -13,8 +13,6 @@ import Modal from "./Modal";
 
 const floating = keyframes`
   0% {
-    overflow: hidden;
-    -webkit-overflow-scrolling: touch;
     /* position: fixed; */
     bottom: calc(100% - 70px);
     left: 20%;
@@ -22,8 +20,6 @@ const floating = keyframes`
   }
 
   100% {
-    overflow: hidden;
-    -webkit-overflow-scrolling: touch;
     /* position: fixed; */
     left: calc(100% - 80px);
     bottom: 15px;
@@ -71,8 +67,8 @@ const floatingTablet = keyframes`
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
     /* position: fixed; */
-    bottom: calc(100% - 75px);
-    left: 0;
+    bottom: calc(100% - 63px);
+    left: 50%;
   }
 
   100% {
@@ -114,7 +110,8 @@ const HeroWrapperStyle = styled.div`
       left: 66%;
       margin-left: -3em;
       .circleShadow {
-        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       }
     }
   }
@@ -125,17 +122,13 @@ const HeroWrapperStyle = styled.div`
     letter-spacing: 1px;
     background-color: var(--blue);
     color: white;
-    color: red;
     cursor: pointer;
     border: none;
     outline: none;
     border-radius: 36px;
-    -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    -webkit-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
   }
 
   .lets-talk-button {
@@ -151,13 +144,16 @@ const HeroWrapperStyle = styled.div`
       position: absolute;
       bottom: calc(100% - 70px);
       left: 0%;
+      -webkit-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+      /* -webkit-animation: ${floating} 0.5s;
+      animation: ${floating} 1s reverse; */
     }
   }
 
   .floating {
     .contact-btn {
-      overflow: hidden;
-      -webkit-overflow-scrolling: touch;
       z-index: 1;
       position: fixed;
       width: -webkit-fit-content;
@@ -281,6 +277,7 @@ const HeroWrapperStyle = styled.div`
         position: fixed;
         left: calc(100% - 65px);
         bottom: 15px;
+        -webkit-animation: ${floatingTablet} 0.5s;
         animation: ${floatingTablet} 0.5s;
         padding: 15px;
       }
@@ -319,6 +316,7 @@ const HeroWrapperStyle = styled.div`
         position: fixed;
         left: calc(100% - 65px);
         bottom: 15px;
+        -webkit-animation: ${floatingTablet} 0.5s;
         animation: ${floatingTablet} 0.5s;
         padding: 15px;
       }
@@ -363,6 +361,7 @@ const HeroWrapperStyle = styled.div`
         position: fixed;
         left: calc(100% - 45px);
         bottom: 15px;
+        -webkit-animation: ${floatingMobileS} 0.5s;
         animation: ${floatingMobileS} 0.5s;
         padding: 15px;
 
