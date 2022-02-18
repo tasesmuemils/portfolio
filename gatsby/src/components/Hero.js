@@ -31,7 +31,7 @@ const floating = keyframes`
 `;
 
 const floatingLaptopL = keyframes`
-  from {
+  0% {
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
     /* position: fixed; */
@@ -39,7 +39,7 @@ const floatingLaptopL = keyframes`
     left: 20%;
   }
 
-  to {
+  100% {
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
     /* position: fixed; */
@@ -49,7 +49,7 @@ const floatingLaptopL = keyframes`
 `;
 
 const floatingLaptop = keyframes`
-  from {
+  0% {
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
     /* position: fixed; */
@@ -57,7 +57,7 @@ const floatingLaptop = keyframes`
     left: 20%;
   }
 
-  to {
+  100% {
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
     /* position: fixed; */
@@ -67,7 +67,7 @@ const floatingLaptop = keyframes`
 `;
 
 const floatingTablet = keyframes`
-  from {
+  0% {
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
     /* position: fixed; */
@@ -75,7 +75,7 @@ const floatingTablet = keyframes`
     left: 0;
   }
 
-  to {
+  100% {
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
     /* position: fixed; */
@@ -85,7 +85,7 @@ const floatingTablet = keyframes`
 `;
 
 const floatingMobileS = keyframes`
-  from {
+  0% {
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
     /* position: fixed; */
@@ -93,7 +93,7 @@ const floatingMobileS = keyframes`
     left: 45%;
   }
 
-  to {
+  100% {
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
     /* position: fixed; */
@@ -125,6 +125,7 @@ const HeroWrapperStyle = styled.div`
     letter-spacing: 1px;
     background-color: var(--blue);
     color: white;
+    color: red;
     cursor: pointer;
     border: none;
     outline: none;
@@ -199,6 +200,7 @@ const HeroWrapperStyle = styled.div`
         position: fixed;
         left: calc(100% - 80px);
         bottom: 15px;
+        -webkit-animation: ${floatingLaptopL} 0.5s;
         animation: ${floatingLaptopL} 0.5s;
       }
     }
@@ -237,6 +239,7 @@ const HeroWrapperStyle = styled.div`
         position: fixed;
         left: calc(100% - 65px);
         bottom: 15px;
+        -webkit-animation: ${floatingLaptop} 0.5s;
         animation: ${floatingLaptop} 0.5s;
         padding: 15px;
 
