@@ -28,16 +28,16 @@ const floating = keyframes`
 
 const floatingLaptopL = keyframes`
   0% {
-    overflow: hidden;
-    -webkit-overflow-scrolling: touch;
+    /* overflow: hidden;
+    -webkit-overflow-scrolling: touch; */
     /* position: fixed; */
     bottom: calc(100% - 130px);
     left: 20%;
   }
 
   100% {
-    overflow: hidden;
-    -webkit-overflow-scrolling: touch;
+    /* overflow: hidden;
+    -webkit-overflow-scrolling: touch; */
     /* position: fixed; */
     left: calc(100% - 80px);
     bottom: 15px;
@@ -46,16 +46,16 @@ const floatingLaptopL = keyframes`
 
 const floatingLaptop = keyframes`
   0% {
-    overflow: hidden;
-    -webkit-overflow-scrolling: touch;
+    /* overflow: hidden;
+    -webkit-overflow-scrolling: touch; */
     /* position: fixed; */
     bottom: calc(100% - 75px);
     left: 20%;
   }
 
   100% {
-    overflow: hidden;
-    -webkit-overflow-scrolling: touch;
+    /* overflow: hidden;
+    -webkit-overflow-scrolling: touch; */
     /* position: fixed; */
     left: calc(100% - 65px);
     bottom: 15px;
@@ -64,17 +64,18 @@ const floatingLaptop = keyframes`
 
 const floatingTablet = keyframes`
   0% {
-    overflow: hidden;
-    -webkit-overflow-scrolling: touch;
-    /* position: fixed; */
-    bottom: calc(100% - 63px);
+    /* overflow: hidden;
+    -webkit-overflow-scrolling: touch; */
+    position: fixed;
+    bottom: calc(100% - 33px);
     left: 50%;
   }
 
+
   100% {
-    overflow: hidden;
-    -webkit-overflow-scrolling: touch;
-    /* position: fixed; */
+    /* overflow: hidden;
+    -webkit-overflow-scrolling: touch; */
+    position: fixed;
     left: calc(100% - 65px);
     bottom: 15px;
   }
@@ -82,16 +83,17 @@ const floatingTablet = keyframes`
 
 const floatingMobileS = keyframes`
   0% {
-    overflow: hidden;
-    -webkit-overflow-scrolling: touch;
+    /* overflow: hidden;
+    -webkit-overflow-scrolling: touch; */
     /* position: fixed; */
     bottom: calc(100% - 80px);
     left: 45%;
+    width: 0px;
   }
 
   100% {
-    overflow: hidden;
-    -webkit-overflow-scrolling: touch;
+    /* overflow: hidden;
+    -webkit-overflow-scrolling: touch; */
     /* position: fixed; */
     left: calc(100% - 45px);
     bottom: 15px;
@@ -117,6 +119,7 @@ const HeroWrapperStyle = styled.div`
   }
 
   .contact-btn {
+    z-index: 1;
     padding: 15px 30px;
     font-size: 20px;
     letter-spacing: 1px;
@@ -126,6 +129,7 @@ const HeroWrapperStyle = styled.div`
     border: none;
     outline: none;
     border-radius: 36px;
+
     -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -133,7 +137,6 @@ const HeroWrapperStyle = styled.div`
 
   .lets-talk-button {
     margin-top: 30%;
-
     position: absolute;
     top: 0;
     left: 0;
@@ -144,9 +147,10 @@ const HeroWrapperStyle = styled.div`
       position: absolute;
       bottom: calc(100% - 70px);
       left: 0%;
+
       -webkit-transition: all 0.5s ease;
       -o-transition: all 0.5s ease;
-      transition: all 0.5s ease;
+      transition: all 0.5s ease-in-out;
       /* -webkit-animation: ${floating} 0.5s;
       animation: ${floating} 1s reverse; */
     }
@@ -219,7 +223,7 @@ const HeroWrapperStyle = styled.div`
       padding: 10px 25px;
       letter-spacing: 0.1em;
       font-weight: 500;
-      transition: all 0.5s ease;
+      /* transition: all 0.5s ease; */
     }
 
     .lets-talk-button {
@@ -255,19 +259,22 @@ const HeroWrapperStyle = styled.div`
       svg {
         transform: rotate(90deg);
         width: 10%;
-        top: 20%;
+        top: 9%;
         left: 20%;
       }
     }
 
     .lets-talk-button {
-      margin-top: 25%;
+      margin-top: 20%;
       .contact-btn {
+        width: 35%;
         left: 0;
         right: 0;
         margin-left: auto;
         margin-right: auto;
-        bottom: calc(100% - 63px);
+        bottom: calc(100% - 33px);
+        overflow: hidden;
+        transform: translateZ(0);
       }
     }
 
@@ -280,6 +287,8 @@ const HeroWrapperStyle = styled.div`
         -webkit-animation: ${floatingTablet} 0.5s;
         animation: ${floatingTablet} 0.5s;
         padding: 15px;
+        overflow: hidden;
+        transform: translateZ(0);
       }
     }
   }
@@ -287,9 +296,9 @@ const HeroWrapperStyle = styled.div`
   @media ${device.mobileL} {
     .shapes-wrapper {
       .shape {
-        height: 40%;
-        top: 82%;
-        width: 15%;
+        height: 50%;
+        top: 79%;
+        width: 20%;
         left: 25%;
       }
     }
@@ -299,14 +308,14 @@ const HeroWrapperStyle = styled.div`
       padding: 10px 20px;
       letter-spacing: 0.1em;
       font-weight: 500;
-      transition: all 0.5s ease;
+      width: 40%;
     }
 
     .lets-talk-button {
-      margin-top: 25%;
+      margin-top: 20%;
 
       .contact-btn {
-        bottom: calc(100% - 100px);
+        bottom: calc(100% - 70px);
       }
     }
 
@@ -325,7 +334,9 @@ const HeroWrapperStyle = styled.div`
 
   @media ${device.mobileM} {
     .lets-talk-button {
+      margin-top: 30%;
       .contact-btn {
+        width: 40%;
         bottom: calc(100% - 50px);
       }
     }
@@ -347,9 +358,8 @@ const HeroWrapperStyle = styled.div`
       font-size: 10px;
     }
     .lets-talk-button {
-      margin-top: 25%;
-
       .contact-btn {
+        width: 50%;
         position: absolute;
         bottom: calc(100% - 80px);
       }
@@ -446,7 +456,7 @@ const HeroStyle = styled.div`
     text-align: center;
 
     .hero-content {
-      margin-top: 100px;
+      margin-top: 40px;
       margin-bottom: 120px;
 
       .hero-content-wrapper {
@@ -510,7 +520,7 @@ export default function Hero() {
                 <h3>Learning front-end web development</h3>
               </div>
             </div>
-            <div className={!inView ? "floating" : "lets-talk-button"}>
+            <div className={!inView ? " floating" : "lets-talk-button"}>
               <button
                 className="contact-btn"
                 onClick={() => {
