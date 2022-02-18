@@ -129,8 +129,11 @@ const HeroWrapperStyle = styled.div`
     border: none;
     outline: none;
     border-radius: 36px;
+    -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
   }
 
@@ -505,11 +508,7 @@ export default function Hero() {
                 <h3>Learning front-end web development</h3>
               </div>
             </div>
-            <div
-              className={
-                inView ? "lets-talk-button" : "lets-talk-button floating"
-              }
-            >
+            <div className={!inView ? "floating" : "lets-talk-button"}>
               <button
                 className="contact-btn"
                 onClick={() => {
