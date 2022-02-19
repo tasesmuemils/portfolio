@@ -505,6 +505,7 @@ export default function Hero() {
   // Setup to check if button is in view
   const { ref, inView } = useInView({
     threshold: 0,
+    initialInView: true,
   });
 
   // Modal state
@@ -524,16 +525,16 @@ export default function Hero() {
 
   const buttonEl = useRef(null);
 
-  useEffect(() => {
-    document.body.className = "controlAnimation";
-    buttonEl.current.className = "lt-btn-wrap";
-    const timer = setTimeout(() => {
-      document.body.className = "";
-      // buttonEl.current.className = "";
-    }, 500);
+  // useEffect(() => {
+  //   document.body.className = "controlAnimation";
+  //   buttonEl.current.className = "lt-btn-wrap";
+  //   const timer = setTimeout(() => {
+  //     document.body.className = "";
+  //     // buttonEl.current.className = "";
+  //   }, 500);
 
-    return () => clearTimeout(timer);
-  }, []);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   console.log(inView, modalOpen);
   return (
