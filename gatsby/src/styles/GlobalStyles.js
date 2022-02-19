@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     html, body {
-        overflow-x: hidden;
+        /* overflow-x: hidden; */
     }
 
     .controlAnimation {

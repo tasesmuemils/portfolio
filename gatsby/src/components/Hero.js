@@ -119,6 +119,15 @@ const HeroWrapperStyle = styled.div`
     }
   }
 
+  .lt-btn-wrap {
+    margin-top: 30%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+  }
+
   .contact-btn {
     z-index: 1;
     padding: 15px 30px;
@@ -517,8 +526,10 @@ export default function Hero() {
 
   useEffect(() => {
     document.body.className = "controlAnimation";
+    buttonEl.current.className = "lt-btn-wrap";
     const timer = setTimeout(() => {
       document.body.className = "";
+      // buttonEl.current.className = "";
     }, 500);
 
     return () => clearTimeout(timer);
