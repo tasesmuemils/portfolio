@@ -63,7 +63,7 @@ const ToolsWrapperStyle = styled.div`
       }
       .tools-logos-wraper {
         display: -ms-grid;
-        display: grid;
+        /* display: grid; */
         -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
         text-align: center;
@@ -71,14 +71,14 @@ const ToolsWrapperStyle = styled.div`
         -ms-flex-pack: center;
         justify-content: center;
         margin: 0px 50px -100px 50px;
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding: 20px 40px;
         * {
           padding: 0px;
         }
 
         svg {
-          margin: 0 auto 0 auto;
+          /* margin: 0 auto 0 auto; */
+          width: 100%;
           height: 60px;
           /* padding: 10px 0; */
           /* width: 70%; */
@@ -93,12 +93,11 @@ const ToolsWrapperStyle = styled.div`
       padding-top: 50px;
       .tools-logos-wraper {
         margin: 0px 20px -100px 20px;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding: 20px 40px;
 
         svg {
-          /* width: 90%; */
-          height: 40px;
+          width: 100%;
+          height: 45px;
         }
       }
     }
@@ -107,13 +106,33 @@ const ToolsWrapperStyle = styled.div`
   @media ${device.mobileM} {
     .tools-wrapper {
       padding-top: 20px;
+      .tools-title {
+        padding: 20px 0;
+      }
       .tools-logos-wraper {
         margin: 0px 10px -70px 10px;
         padding-top: 10px;
         padding-bottom: 10px;
 
         svg {
-          /* width: 90%; */
+          width: 100%;
+          height: 35px;
+        }
+      }
+    }
+  }
+
+  @media ${device.mobileS} {
+    .tools-wrapper {
+      padding-top: 20px;
+      .tools-title {
+        padding: 20px 0;
+      }
+      .tools-logos-wraper {
+        margin: 0px 10px -70px 10px;
+
+        svg {
+          width: 200px;
           height: 35px;
         }
       }

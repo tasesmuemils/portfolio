@@ -28,7 +28,11 @@ const AboutStyle = styled.div`
   }
 
   @media ${device.mobileM} {
-    padding: 50px 10px;
+    padding: 120px 25px;
+  }
+
+  @media ${device.mobileS} {
+    padding: 100px 10px;
   }
 `;
 
