@@ -14,6 +14,7 @@ import Modal from "./Modal";
 const floating = keyframes`
   0% {
     /* position: fixed; */
+    overflow: hidden;
     bottom: calc(100% - 70px);
     left: 20%;
     
@@ -129,7 +130,6 @@ const HeroWrapperStyle = styled.div`
     border: none;
     outline: none;
     border-radius: 36px;
-
     -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -142,17 +142,19 @@ const HeroWrapperStyle = styled.div`
     left: 0;
     width: 100%;
     height: 100vh;
+    /* padding-right: 20%; */
 
     .contact-btn {
       position: absolute;
       bottom: calc(100% - 70px);
       left: 0%;
-
       -webkit-transition: all 0.5s ease;
       -o-transition: all 0.5s ease;
       transition: all 0.5s ease-in-out;
-      /* -webkit-animation: ${floating} 0.5s;
-      animation: ${floating} 1s reverse; */
+
+      span {
+        transition: all 0.5s ease-in-out;
+      }
     }
   }
 
@@ -175,6 +177,7 @@ const HeroWrapperStyle = styled.div`
         height: 30px;
         border-radius: 70%;
         vertical-align: middle;
+        transition: all 0.5s ease-in-out;
       }
     }
   }
@@ -527,7 +530,11 @@ export default function Hero() {
                   modalOpen ? close() : open();
                 }}
               >
-                {inView ? `LETS TALK!` : <Letter className="letter" />}
+                {inView ? (
+                  <span>LETS TALK!</span>
+                ) : (
+                  <Letter className="letter" />
+                )}
               </button>
             </div>
           </HeroStyle>
