@@ -32,8 +32,8 @@ const ProjectStyle = styled.div`
     }
 
     .project-logos {
-      display: flex;
-      justify-content: center;
+      /* display: flex; */
+      /* justify-content: center; */
       padding-bottom: 15px;
     }
 
