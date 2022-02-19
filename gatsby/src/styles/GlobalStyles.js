@@ -12,6 +12,12 @@ const GlobalStyles = createGlobalStyle`
     html, body {
         overflow-x: hidden;
     }
+
+    .controlAnimation {
+        animation-duration: 0s !important;
+        -webkit-animation-duration: 0s !important;
+        transition: all 0s !important;
+    }
     
 
     :root {
