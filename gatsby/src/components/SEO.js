@@ -21,15 +21,15 @@ export default function SEO({ children, location, description, title, image }) {
       <html lang="en" />
       <title>{title}</title>
       {/* ICONS */}
-      <link rel="icon" href="/EB_logo.ico" type="image/svg+xml" />
-      <link rel="alternate icon" href="/EB_logo.ico" />
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      <link rel="alternate icon" href="/favicon.ico" />
       {/* Meta tags*/}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta charSet="utf-8" />
       <meta name="description" content={site.siteMetadata.description} />
 
       {location && <meta property="og:url" content={location.href} />}
-      <meta property="og:image" content={image || "/EB_logo.ico"} />
+      <meta property="og:image" content={image || "/favicon.ico"} />
       {/* <meta property="og:title" content={title} key={ogtitle} />
       <meta
         property="og:site_name"
