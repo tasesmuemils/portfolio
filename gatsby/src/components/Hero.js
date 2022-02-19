@@ -13,35 +13,31 @@ import Modal from "./Modal";
 
 const floating = keyframes`
   0% {
-    /* position: fixed; */
-    overflow: hidden;
     bottom: calc(100% - 70px);
     left: 20%;
-    
+    width: 170px;
+    border-radius: 36px;
   }
 
   100% {
-    /* position: fixed; */
     left: calc(100% - 80px);
     bottom: 15px;
+    width: 65px;
+    border-radius: 36px;
   }
 `;
 
 const floatingLaptopL = keyframes`
   0% {
-    /* overflow: hidden;
-    -webkit-overflow-scrolling: touch; */
-    /* position: fixed; */
     bottom: calc(100% - 130px);
     left: 20%;
+    width: 170px;
   }
 
   100% {
-    /* overflow: hidden;
-    -webkit-overflow-scrolling: touch; */
-    /* position: fixed; */
     left: calc(100% - 80px);
     bottom: 15px;
+    width: 65px;
   }
 `;
 
@@ -50,7 +46,7 @@ const floatingLaptop = keyframes`
     /* overflow: hidden;
     -webkit-overflow-scrolling: touch; */
     /* position: fixed; */
-    bottom: calc(100% - 75px);
+    bottom: calc(100% - 85px);
     left: 20%;
   }
 
@@ -58,7 +54,7 @@ const floatingLaptop = keyframes`
     /* overflow: hidden;
     -webkit-overflow-scrolling: touch; */
     /* position: fixed; */
-    left: calc(100% - 65px);
+    left: calc(100% - 72px);
     bottom: 15px;
   }
 `;
@@ -77,7 +73,7 @@ const floatingTablet = keyframes`
     /* overflow: hidden;
     -webkit-overflow-scrolling: touch; */
     position: fixed;
-    left: calc(100% - 65px);
+    left: calc(100% - 55px);
     bottom: 15px;
   }
 `;
@@ -87,7 +83,7 @@ const floatingMobileS = keyframes`
     /* overflow: hidden;
     -webkit-overflow-scrolling: touch; */
     /* position: fixed; */
-    bottom: calc(100% - 80px);
+    bottom: calc(100% - 110px);
     left: 45%;
     width: 0px;
   }
@@ -96,7 +92,7 @@ const floatingMobileS = keyframes`
     /* overflow: hidden;
     -webkit-overflow-scrolling: touch; */
     /* position: fixed; */
-    left: calc(100% - 45px);
+    left: calc(100% - 52px);
     bottom: 15px;
   }
 `;
@@ -131,7 +127,7 @@ const HeroWrapperStyle = styled.div`
   .contact-btn {
     z-index: 1;
     padding: 15px 30px;
-    font-size: 20px;
+    /* font-size: 20px; */
     letter-spacing: 1px;
     background-color: var(--blue);
     color: white;
@@ -153,16 +149,33 @@ const HeroWrapperStyle = styled.div`
     height: 100vh;
 
     .contact-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: absolute;
       bottom: calc(100% - 70px);
       left: 0%;
+      width: 200px;
+      border-radius: 36px;
       -webkit-transition: all 0.5s ease;
       -o-transition: all 0.5s ease;
       transition: all 0.5s ease-in-out;
+      transition-property: bottom, left, width, border-radius;
       overflow: hidden;
       -webkit-overflow-scrolling: touch;
 
+      .letter {
+        visibility: hidden;
+        width: 0px;
+        position: relative;
+        transition: all 0.5s ease-in-out;
+      }
+
       span {
+        visibility: visible;
+        font-size: 18px;
+        width: 100px;
+        /* color: transparent; */
         transition: all 0.5s ease-in-out;
       }
     }
@@ -170,25 +183,35 @@ const HeroWrapperStyle = styled.div`
 
   .floating {
     .contact-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       z-index: 1;
       position: fixed;
-      width: -webkit-fit-content;
-      width: -moz-fit-content;
+      width: 65px;
       left: calc(100% - 80px);
       bottom: 15px;
       -webkit-animation: ${floating} 0.5s;
       animation: ${floating} 0.5s;
-      padding: 20px;
-      border-radius: 50%;
+      padding: 17px 17px;
+      border-radius: 36px;
       margin: 0;
       overflow: hidden;
       -webkit-overflow-scrolling: touch;
 
       .letter {
+        visibility: visible;
         width: 30px;
         height: 30px;
-        border-radius: 70%;
-        vertical-align: middle;
+        transition: all 0.5s ease-in-out;
+        color: var(--white);
+      }
+
+      span {
+        visibility: hidden;
+        font-size: 0px;
+        width: 0px;
+        /* color: transparent; */
         transition: all 0.5s ease-in-out;
       }
     }
@@ -234,7 +257,6 @@ const HeroWrapperStyle = styled.div`
     }
 
     .contact-btn {
-      font-size: 15px;
       padding: 10px 25px;
       letter-spacing: 0.1em;
       font-weight: 500;
@@ -243,8 +265,12 @@ const HeroWrapperStyle = styled.div`
 
     .lets-talk-button {
       .contact-btn {
-        bottom: calc(100% - 75px);
+        bottom: calc(100% - 85px);
         left: 0%;
+
+        span {
+          font-size: 15px;
+        }
       }
     }
 
@@ -252,17 +278,15 @@ const HeroWrapperStyle = styled.div`
       .contact-btn {
         z-index: 1;
         position: fixed;
-        left: calc(100% - 65px);
+        left: calc(100% - 72px);
         bottom: 15px;
         -webkit-animation: ${floatingLaptop} 0.5s;
         animation: ${floatingLaptop} 0.5s;
-        padding: 15px;
+        padding: 18px;
 
         .letter {
-          width: 25px;
-          height: 25px;
-          border-radius: 70%;
-          vertical-align: middle;
+          width: 28px;
+          height: 28px;
         }
       }
     }
@@ -290,6 +314,10 @@ const HeroWrapperStyle = styled.div`
         bottom: calc(100% - 33px);
         overflow: hidden;
         transform: translateZ(0);
+
+        span {
+          font-size: 14px;
+        }
       }
     }
 
@@ -297,13 +325,18 @@ const HeroWrapperStyle = styled.div`
       .contact-btn {
         z-index: 1;
         position: fixed;
-        left: calc(100% - 65px);
+        left: calc(100% - 70px);
         bottom: 15px;
         -webkit-animation: ${floatingTablet} 0.5s;
         animation: ${floatingTablet} 0.5s;
-        padding: 15px;
+        padding: 19px;
         overflow: hidden;
         transform: translateZ(0);
+
+        .letter {
+          width: 26px;
+          height: 26px;
+        }
       }
     }
   }
@@ -338,11 +371,17 @@ const HeroWrapperStyle = styled.div`
       .contact-btn {
         z-index: 1;
         position: fixed;
-        left: calc(100% - 65px);
+        left: calc(100% - 55px);
         bottom: 15px;
         -webkit-animation: ${floatingTablet} 0.5s;
         animation: ${floatingTablet} 0.5s;
-        padding: 15px;
+        padding: 14px 14px;
+        width: 48px;
+
+        .letter {
+          width: 20px;
+          height: 20px;
+        }
       }
     }
   }
@@ -353,6 +392,7 @@ const HeroWrapperStyle = styled.div`
       .contact-btn {
         width: 40%;
         bottom: calc(100% - 50px);
+        padding: 5px 0px;
       }
     }
 
@@ -369,14 +409,16 @@ const HeroWrapperStyle = styled.div`
         left: 35%;
       }
     }
-    .contact-btn {
-      font-size: 10px;
-    }
+
     .lets-talk-button {
       .contact-btn {
         width: 50%;
         position: absolute;
-        bottom: calc(100% - 80px);
+        bottom: calc(100% - 110px);
+
+        span {
+          font-size: 10px;
+        }
       }
     }
 
@@ -384,18 +426,11 @@ const HeroWrapperStyle = styled.div`
       .contact-btn {
         z-index: 1;
         position: fixed;
-        left: calc(100% - 45px);
+        left: calc(100% - 52px);
         bottom: 15px;
         -webkit-animation: ${floatingMobileS} 0.5s;
         animation: ${floatingMobileS} 0.5s;
-        padding: 15px;
-
-        .letter {
-          width: 15px;
-          height: 15px;
-          border-radius: 70%;
-          vertical-align: middle;
-        }
+        padding: 14px 12px;
       }
     }
   }
@@ -489,12 +524,12 @@ const HeroStyle = styled.div`
 
       .hero-content-wrapper {
         h1 {
-          font-size: 1.5em;
+          font-size: 2em;
         }
 
         h3 {
-          font-size: 0.7em;
-          padding-bottom: 15px;
+          font-size: 0.9em;
+          padding-bottom: 25px;
         }
       }
     }
@@ -559,11 +594,14 @@ export default function Hero() {
                   modalOpen ? close() : open();
                 }}
               >
-                {inView ? (
+                <Letter className="letter" />
+                <span>LETS TALK!</span>
+
+                {/* {inView ? (
                   <span>LETS TALK!</span>
                 ) : (
                   <Letter className="letter" />
-                )}
+                )} */}
               </button>
             </div>
           </HeroStyle>

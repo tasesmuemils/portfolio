@@ -59,15 +59,29 @@ const Typography = createGlobalStyle`
 
   @media ${device.mobileL} {
     h2 {
-      font-size: 18px;
+      font-size: 21px;
+      line-height: 25px;
+      margin: 0;
+      padding-bottom: 0px;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 20px;
+    }
+  }
+
+  @media ${device.mobileM} {
+    h2 {
+      font-size: 21px;
       line-height: 20px;
       margin: 0;
       padding-bottom: 0px;
     }
 
     p {
-      font-size: 12px;
-      line-height: 15px;
+      font-size: 15px;
+      line-height: 25px;
     }
   }
 

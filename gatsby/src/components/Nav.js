@@ -121,7 +121,7 @@ const Navigation = styled.nav`
     .logo-nav-items {
       .logo {
         svg {
-          width: 20%;
+          width: 15%;
         }
       }
     }
