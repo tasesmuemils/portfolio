@@ -1,5 +1,5 @@
 // Main packages
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import { AnimatePresence } from "framer-motion";
 // Styles
@@ -119,6 +119,15 @@ const HeroWrapperStyle = styled.div`
     }
   }
 
+  .lets-talk-btn-no-anime {
+    margin-top: 30%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+  }
+
   .contact-btn {
     z-index: 1;
     padding: 15px 30px;
@@ -142,7 +151,6 @@ const HeroWrapperStyle = styled.div`
     left: 0;
     width: 100%;
     height: 100vh;
-    /* padding-right: 20%; */
 
     .contact-btn {
       position: absolute;
@@ -510,6 +518,12 @@ export default function Hero() {
     }
   }, [modalOpen]);
 
+  const buttonEl = useRef(null);
+
+  useEffect(() => {
+    buttonEl.current.className = "lets-talk-btn-no-anime";
+  }, []);
+
   console.log(inView, modalOpen);
   return (
     <>
@@ -523,7 +537,10 @@ export default function Hero() {
                 <h3>Learning front-end web development</h3>
               </div>
             </div>
-            <div className={!inView ? " floating" : "lets-talk-button"}>
+            <div
+              ref={buttonEl}
+              className={!inView ? " floating" : "lets-talk-button"}
+            >
               <button
                 className="contact-btn"
                 onClick={() => {
