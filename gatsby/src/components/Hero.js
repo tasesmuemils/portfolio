@@ -550,7 +550,7 @@ export default function Hero() {
             </div>
             <div
               ref={buttonEl}
-              className={!inView ? " floating" : "lets-talk-button"}
+              className={inView ? "lets-talk-button" : "floating"}
             >
               <button
                 className="contact-btn"
