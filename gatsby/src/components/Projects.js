@@ -34,7 +34,7 @@ const ProjectsStyle = styled.div`
 
   @media ${device.mobileL} {
     .projects-wrapper {
-      padding: 200px 0 50px 0;
+      padding: 150px 0 50px 0;
     }
   }
 

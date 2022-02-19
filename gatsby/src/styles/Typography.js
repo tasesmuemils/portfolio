@@ -57,6 +57,20 @@ const Typography = createGlobalStyle`
     }
   }
 
+  @media ${device.mobileL} {
+    h2 {
+      font-size: 18px;
+      line-height: 20px;
+      margin: 0;
+      padding-bottom: 0px;
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
   @media ${device.mobileS} {
     h2 {
       font-size: 18px;

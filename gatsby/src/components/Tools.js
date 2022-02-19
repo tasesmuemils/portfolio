@@ -62,22 +62,27 @@ const ToolsWrapperStyle = styled.div`
         padding-bottom: 20px;
       }
       .tools-logos-wraper {
+        display: -ms-grid;
         display: grid;
+        -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
         text-align: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         margin: 0px 50px -100px 50px;
-        padding-top: 30px;
+        padding-top: 40px;
         padding-bottom: 40px;
         * {
           padding: 0px;
         }
 
         svg {
-          margin: auto;
-          padding: 10px 0;
-          width: 80%;
-          height: 100%;
+          margin: 0 auto 0 auto;
+          height: 60px;
+          /* padding: 10px 0; */
+          /* width: 70%; */
+          /* height: 100%; */
         }
       }
     }
@@ -92,8 +97,8 @@ const ToolsWrapperStyle = styled.div`
         padding-bottom: 20px;
 
         svg {
-          width: 90%;
-          height: 60%;
+          /* width: 90%; */
+          height: 40px;
         }
       }
     }
@@ -104,6 +109,13 @@ const ToolsWrapperStyle = styled.div`
       padding-top: 20px;
       .tools-logos-wraper {
         margin: 0px 10px -70px 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        svg {
+          /* width: 90%; */
+          height: 35px;
+        }
       }
     }
   }
