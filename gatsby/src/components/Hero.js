@@ -119,15 +119,6 @@ const HeroWrapperStyle = styled.div`
     }
   }
 
-  .lets-talk-btn-no-anime {
-    margin-top: 30%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-  }
-
   .contact-btn {
     z-index: 1;
     padding: 15px 30px;
@@ -159,6 +150,8 @@ const HeroWrapperStyle = styled.div`
       -webkit-transition: all 0.5s ease;
       -o-transition: all 0.5s ease;
       transition: all 0.5s ease-in-out;
+      overflow: hidden;
+      -webkit-overflow-scrolling: touch;
 
       span {
         transition: all 0.5s ease-in-out;
@@ -179,6 +172,8 @@ const HeroWrapperStyle = styled.div`
       padding: 20px;
       border-radius: 50%;
       margin: 0;
+      overflow: hidden;
+      -webkit-overflow-scrolling: touch;
 
       .letter {
         width: 30px;
@@ -521,7 +516,12 @@ export default function Hero() {
   const buttonEl = useRef(null);
 
   useEffect(() => {
-    buttonEl.current.className = "lets-talk-btn-no-anime";
+    document.body.className = "controlAnimation";
+    const timer = setTimeout(() => {
+      document.body.className = "";
+    }, 500);
+
+    return () => clearTimeout(timer);
   }, []);
 
   console.log(inView, modalOpen);
