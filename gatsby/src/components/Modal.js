@@ -281,7 +281,7 @@ const Modal = ({ handleClose }) => {
                 : setIsSuccessfullySubmitted(false);
             })}
             className="email-form"
-            action="https://formsubmit.co/emils.bisenieks93@gmail.com"
+            action="https://formsubmit.co/2055f14f29843faf72a13ac2f96eae67"
             method="POST"
           >
             {isSuccessfullySubmitted ? (
