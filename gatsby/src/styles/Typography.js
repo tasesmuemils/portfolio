@@ -13,7 +13,7 @@ const Typography = createGlobalStyle`
     font-family: "Poppins";
   }
 
-  h2 {
+  h3 {
     font-style: normal;
     font-weight: 600;
     font-size: 39px;
@@ -30,7 +30,7 @@ const Typography = createGlobalStyle`
 
   // Responsive design
   @media ${device.laptop} {
-    h2 {
+    h3 {
       font-size: 30px;
       line-height: 41px;
       margin: 0;
@@ -44,7 +44,7 @@ const Typography = createGlobalStyle`
   }
 
   @media ${device.tablet} {
-    h2 {
+    h3 {
       font-size: 25px;
       line-height: 30px;
       margin: 0;
@@ -58,7 +58,7 @@ const Typography = createGlobalStyle`
   }
 
   @media ${device.mobileL} {
-    h2 {
+    h3 {
       font-size: 21px;
       line-height: 25px;
       margin: 0;
@@ -72,7 +72,7 @@ const Typography = createGlobalStyle`
   }
 
   @media ${device.mobileM} {
-    h2 {
+    h3 {
       font-size: 21px;
       line-height: 20px;
       margin: 0;
@@ -86,7 +86,7 @@ const Typography = createGlobalStyle`
   }
 
   @media ${device.mobileS} {
-    h2 {
+    h3 {
       font-size: 18px;
       line-height: 20px;
       margin: 0;

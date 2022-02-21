@@ -364,6 +364,7 @@ const HeroWrapperStyle = styled.div`
 
       .contact-btn {
         bottom: calc(100% - 70px);
+        padding: 5px 0px;
       }
     }
 
@@ -457,7 +458,7 @@ const HeroStyle = styled.div`
         margin: 0;
       }
 
-      h3 {
+      h2 {
         font-size: 1.3em;
         margin: 0;
         padding-bottom: 30px;
@@ -487,7 +488,7 @@ const HeroStyle = styled.div`
           font-size: 2.5em;
         }
 
-        h3 {
+        h2 {
           font-size: 1em;
           padding-bottom: 20px;
         }
@@ -527,7 +528,7 @@ const HeroStyle = styled.div`
           font-size: 2em;
         }
 
-        h3 {
+        h2 {
           font-size: 0.9em;
           padding-bottom: 25px;
         }
@@ -581,7 +582,7 @@ export default function Hero() {
             <div ref={ref} className="hero-content">
               <div className="hero-content-wrapper">
                 <h1>Hi, I'm Emils.</h1>
-                <h3>Learning front-end web development</h3>
+                <h2>Learning front-end web development</h2>
               </div>
             </div>
             <div
