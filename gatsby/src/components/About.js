@@ -24,15 +24,15 @@ const AboutStyle = styled.div`
   }
 
   @media ${device.tablet} {
-    padding: 100px 30px;
+    padding: 120px 30px 100px 30px;
   }
 
   @media ${device.mobileM} {
-    padding: 120px 25px;
+    padding: 120px 25px 100px 25px;
   }
 
   @media ${device.mobileS} {
-    padding: 100px 10px;
+    padding: 80px 10px 60px 25px;
   }
 `;
 

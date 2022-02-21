@@ -18,10 +18,14 @@ const FooterStyle = styled.div`
     position: absolute;
     bottom: 6em;
     left: 3em;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
     transform: rotate(90deg);
     svg {
       width: 65%;
+      /* height: 100%; */
       .circleShadow {
+        -webkit-filter: drop-shadow(4px 0px 4px rgba(0, 0, 0, 0.25));
         filter: drop-shadow(4px 0px 4px rgba(0, 0, 0, 0.25));
       }
     }
@@ -184,6 +188,17 @@ const FooterStyle = styled.div`
         p {
           font-size: 10px;
         }
+      }
+    }
+  }
+
+  @media ${device.mobileS} {
+    .shapes-wrapper {
+      bottom: 9em;
+      left: -3em;
+
+      svg {
+        width: 20%;
       }
     }
   }

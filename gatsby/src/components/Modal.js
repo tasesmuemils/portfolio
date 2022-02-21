@@ -1,5 +1,5 @@
 // Main packages
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import ModalBackdrop from "./ModalBackdrop";
 import { useForm } from "react-hook-form";
@@ -233,10 +233,8 @@ const Modal = ({ handleClose }) => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const [isSuccessfullySubmitted, setIsSuccessfullySubmitted] =
-    React.useState(false);
+  const [isSuccessfullySubmitted, setIsSuccessfullySubmitted] = useState(false);
 
-  console.log(errors);
   // Modal animation object
   const dropIn = {
     hidden: {
@@ -256,6 +254,7 @@ const Modal = ({ handleClose }) => {
       opacity: 0,
     },
   };
+
   return (
     <ModalBackdrop onClick={handleClose}>
       <motion.div
@@ -276,13 +275,27 @@ const Modal = ({ handleClose }) => {
           </div>
           <form
             onSubmit={handleSubmit((data) => {
+              fetch(
+                "https://formsubmit.co/ajax/2055f14f29843faf72a13ac2f96eae67",
+                {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                  },
+                  body: JSON.stringify({
+                    name: data.name,
+                    email: data.email,
+                    subject: data.subject,
+                    message: data.message,
+                  }),
+                }
+              ).then((response) => response.json());
               data
                 ? setIsSuccessfullySubmitted(true)
                 : setIsSuccessfullySubmitted(false);
             })}
             className="email-form"
-            action="https://formsubmit.co/2055f14f29843faf72a13ac2f96eae67"
-            method="POST"
           >
             {isSuccessfullySubmitted ? (
               <div className="success">

@@ -34,6 +34,12 @@ const ProjectsStyle = styled.div`
 
   @media ${device.mobileL} {
     .projects-wrapper {
+      padding: 180px 0 50px 0;
+    }
+  }
+
+  @media ${device.mobileM} {
+    .projects-wrapper {
       padding: 150px 0 50px 0;
     }
   }
