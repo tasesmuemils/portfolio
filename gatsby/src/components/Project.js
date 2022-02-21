@@ -18,7 +18,7 @@ const ProjectStyle = styled.div`
   padding-bottom: 300px;
 
   .project-info {
-    h5 {
+    h4 {
       font-style: normal;
       font-weight: 600;
       font-size: 20px;
@@ -65,12 +65,12 @@ const ProjectStyle = styled.div`
 
     .project-info {
       padding-bottom: 15px;
-      h5 {
+      h4 {
         font-size: 18px;
         line-height: 25px;
       }
 
-      h2 {
+      h3 {
         padding-bottom: 10px;
       }
 
@@ -103,12 +103,12 @@ const ProjectStyle = styled.div`
 
     .project-info {
       padding-bottom: 15px;
-      h5 {
+      h4 {
         font-size: 15px;
         line-height: 20px;
       }
 
-      h2 {
+      h3 {
         padding-bottom: 5px;
       }
 
@@ -219,8 +219,8 @@ export default function Project({
     <>
       <ProjectStyle>
         <div className="project-info">
-          <h5>{project}</h5>
-          <h2>{projectName}</h2>
+          <h4>{project}</h4>
+          <h3>{projectName}</h3>
           <p>{projectDescription}</p>
           <div className="project-logos">{projectLogos}</div>
           <div className="buttons-wrapper">

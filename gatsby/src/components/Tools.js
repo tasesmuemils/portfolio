@@ -9,7 +9,7 @@ import styled from "styled-components";
 import { device } from "./mediaQueries";
 
 const ToolsWrapperStyle = styled.div`
-  background-color: var(--pink);
+  background-color: var(--purple);
   .tools-wrapper {
     display: -ms-grid;
     display: grid;
@@ -20,7 +20,7 @@ const ToolsWrapperStyle = styled.div`
 
     .tools-title {
       padding: 40px 0;
-      h2 {
+      h3 {
         color: var(--white);
       }
     }
@@ -58,7 +58,7 @@ const ToolsWrapperStyle = styled.div`
     .tools-wrapper {
       .tools-title {
         padding: 30px 0;
-        h2 {
+        h3 {
           padding-bottom: 0;
         }
       }
@@ -127,7 +127,7 @@ const ToolsWrapperStyle = styled.div`
       padding-top: 10px;
       .tools-title {
         padding: 20px;
-        h2 {
+        h3 {
           font-size: 15px;
         }
       }
@@ -150,9 +150,9 @@ export default function Tools() {
       <div className="wrapper">
         <div className="tools-wrapper">
           <div className="tools-title">
-            <h2>
+            <h3>
               I have used many tools <br /> for different projects
-            </h2>
+            </h3>
           </div>
           <div className="tools-logos-wraper">
             <LogosRowOne />

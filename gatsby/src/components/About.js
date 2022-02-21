@@ -77,7 +77,7 @@ export default function About() {
       </ElipseBlueStyle>
 
       <AboutStyle id="about">
-        <h2>Nice to meet you</h2>
+        <h3>Nice to meet you</h3>
         <p>
           My name is Emils Bisenieks and I am learning front-end web
           development. I hope this page will help to understand my skills and

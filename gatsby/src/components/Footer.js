@@ -245,6 +245,7 @@ export default function Footer(props) {
                 href="https://www.instagram.com/tasesmuemils/"
                 rel="noreferrer"
                 target="_blank"
+                aria-label="Instagram"
               >
                 <InstagramIcon />
               </a>
@@ -254,6 +255,7 @@ export default function Footer(props) {
                 href="https://github.com/tasesmuemils"
                 rel="noreferrer"
                 target="_blank"
+                aria-label="Github"
               >
                 <GithubIcon />
               </a>
@@ -263,6 +265,7 @@ export default function Footer(props) {
                 href="https://mobile.twitter.com/tasesmuemils"
                 rel="noreferrer"
                 target="_blank"
+                aria-label="Twitter"
               >
                 <TwitterIcon />
               </a>

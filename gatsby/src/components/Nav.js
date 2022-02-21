@@ -172,6 +172,7 @@ export default function Nav() {
             href="https://www.instagram.com/tasesmuemils/"
             rel="noreferrer"
             target="_blank"
+            aria-label="Instagram"
           >
             <InstagramIcon />
           </a>
@@ -181,6 +182,7 @@ export default function Nav() {
             href="https://github.com/tasesmuemils"
             rel="noreferrer"
             target="_blank"
+            aria-label="Github"
           >
             <GithubIcon />
           </a>
@@ -190,6 +192,7 @@ export default function Nav() {
             href="https://mobile.twitter.com/tasesmuemils"
             rel="noreferrer"
             target="_blank"
+            aria-label="Twitter"
           >
             <TwitterIcon />
           </a>
