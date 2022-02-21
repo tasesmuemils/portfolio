@@ -1,10 +1,12 @@
 // Main packages
 import React from "react";
-import Img from "gatsby-image";
+// import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 // Styling
 import styled from "styled-components";
 import { device } from "./mediaQueries";
 // Components
+import SEO from "./SEO";
 import Button from "./Button";
 
 const ProjectStyle = styled.div`
@@ -212,30 +214,35 @@ export default function Project({
   projectLink,
   projectCode,
 }) {
-  console.log(projectImage);
+  console.log(projectImage.node.gatsbyImageData.images.fallback.src);
   return (
-    <ProjectStyle>
-      <div className="project-info">
-        <h5>{project}</h5>
-        <h2>{projectName}</h2>
-        <p>{projectDescription}</p>
-        <div className="project-logos">{projectLogos}</div>
-        <div className="buttons-wrapper">
-          <a href={projectLink} rel="noreferrer" target="_blank">
-            <Button text="Preview" />
-          </a>
-          {projectName === "Zeltabele.lv" ? (
-            ""
-          ) : (
-            <a href={projectCode} rel="noreferrer" target="_blank">
-              <Button text="Code" />
+    <>
+      <ProjectStyle>
+        <div className="project-info">
+          <h5>{project}</h5>
+          <h2>{projectName}</h2>
+          <p>{projectDescription}</p>
+          <div className="project-logos">{projectLogos}</div>
+          <div className="buttons-wrapper">
+            <a href={projectLink} rel="noreferrer" target="_blank">
+              <Button text="Preview" />
             </a>
-          )}
+            {projectName === "Zeltabele.lv" ? (
+              ""
+            ) : (
+              <a href={projectCode} rel="noreferrer" target="_blank">
+                <Button text="Code" />
+              </a>
+            )}
+          </div>
         </div>
-      </div>
-      <div className="project-img-wrapper">
-        <Img fluid={projectImage.node.fluid} />
-      </div>
-    </ProjectStyle>
+        <div className="project-img-wrapper">
+          <GatsbyImage
+            alt={projectImage.node.gatsbyImageData.images.fallback.src}
+            image={projectImage.node.gatsbyImageData}
+          />
+        </div>
+      </ProjectStyle>
+    </>
   );
 }

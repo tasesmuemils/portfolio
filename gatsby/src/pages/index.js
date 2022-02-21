@@ -9,6 +9,7 @@ import Tools from "../components/Tools";
 import Projects from "../components/Projects";
 
 export default function HomePage({ data }) {
+  console.log(data);
   return (
     <>
       <Hero />
@@ -25,9 +26,7 @@ export const query = graphql`
     allImageSharp(sort: { fields: fluid___originalName, order: ASC }) {
       edges {
         node {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: CONSTRAINED)
         }
       }
     }

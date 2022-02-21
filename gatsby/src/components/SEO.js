@@ -9,7 +9,6 @@ export default function SEO({ children, location, description, title, image }) {
         siteMetadata {
           title
           description
-          image
           twitterUsername
         }
       }
@@ -27,20 +26,20 @@ export default function SEO({ children, location, description, title, image }) {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta charSet="utf-8" />
       <meta name="description" content={site.siteMetadata.description} />
-
+      {/*Open Hraph*/}
       {location && <meta property="og:url" content={location.href} />}
       <meta property="og:image" content={image || "/favicon.ico"} />
-      {/* <meta property="og:title" content={title} key={ogtitle} />
+      <meta property="og:title" content={title} key="ogtitle" />
       <meta
         property="og:site_name"
         content={site.siteMetadata.title}
-        key={ogsitename}
+        key="ogsitename"
       />
       <meta
         property="og:description"
         content={description}
-        key={ogdescription}
-      /> */}
+        key="ogdescription"
+      />
       {children}
     </Helmet>
   );
