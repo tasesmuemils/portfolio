@@ -32,8 +32,6 @@ const ProjectStyle = styled.div`
     }
 
     .project-logos {
-      /* display: flex; */
-      /* justify-content: center; */
       padding-bottom: 15px;
     }
 
@@ -149,7 +147,7 @@ const ProjectStyle = styled.div`
 
       .project-logos {
         svg {
-          width: 40%;
+          width: 30%;
         }
       }
     }
@@ -160,7 +158,7 @@ const ProjectStyle = styled.div`
     .project-info {
       .project-logos {
         svg {
-          width: 70%;
+          width: 35%;
         }
       }
       .buttons-wrapper {
@@ -169,6 +167,31 @@ const ProjectStyle = styled.div`
         button {
           margin: 0 auto 10px auto;
           width: 50%;
+          font-size: 13px;
+        }
+      }
+    }
+
+    .project-img-wrapper {
+      padding: 5px;
+    }
+  }
+
+  @media ${device.mobileS} {
+    padding-bottom: 50px;
+    margin: 0 10px;
+    .project-info {
+      .project-logos {
+        svg {
+          width: 60%;
+        }
+      }
+      .buttons-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        button {
+          margin: 0 auto 10px auto;
+          width: 60%;
           font-size: 13px;
         }
       }

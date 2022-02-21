@@ -67,7 +67,7 @@ const Typography = createGlobalStyle`
 
     p {
       font-size: 15px;
-      line-height: 20px;
+      line-height: 25px;
     }
   }
 
@@ -94,8 +94,8 @@ const Typography = createGlobalStyle`
     }
 
     p {
-      font-size: 12px;
-      line-height: 15px;
+      font-size: 13px;
+      line-height: 17px;
     }
   }
 `;
