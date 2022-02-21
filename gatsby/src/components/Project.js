@@ -6,7 +6,6 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import { device } from "./mediaQueries";
 // Components
-import SEO from "./SEO";
 import Button from "./Button";
 
 const ProjectStyle = styled.div`
