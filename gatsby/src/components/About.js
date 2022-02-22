@@ -54,7 +54,6 @@ const ElipseBlueStyle = styled.div`
   position: absolute;
   right: 0;
   bottom: -20%;
-  /* top: -20%; */
   z-index: -1;
 
   @media ${device.laptop} {

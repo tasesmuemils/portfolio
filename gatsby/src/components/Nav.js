@@ -23,7 +23,6 @@ const Navigation = styled.nav`
 
   .logo-nav-items {
     display: grid;
-    /* grid-template-columns: 1fr 1fr; */
     align-items: center;
 
     .logo {
@@ -98,7 +97,6 @@ const Navigation = styled.nav`
     padding: 20px;
     grid-template-columns: 1fr;
     text-align: center;
-    /* grid-template-columns: 1fr; */
     justify-content: center;
 
     .logo-nav-items {
@@ -157,14 +155,6 @@ export default function Nav() {
         <div className="logo">
           <Logo />
         </div>
-        {/* <ul className="nav-items">
-          <Link to="/#about">
-            <li>About</li>
-          </Link>
-          <Link to="/#projects">
-            <li>Projects</li>
-          </Link>
-        </ul> */}
       </div>
       <ul className="nav-icons">
         <li>
