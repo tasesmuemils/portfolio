@@ -23,7 +23,6 @@ const FooterStyle = styled.div`
     transform: rotate(90deg);
     svg {
       width: 65%;
-      /* height: 100%; */
       .circleShadow {
         -webkit-filter: drop-shadow(4px 0px 4px rgba(0, 0, 0, 0.25));
         filter: drop-shadow(4px 0px 4px rgba(0, 0, 0, 0.25));
@@ -211,7 +210,7 @@ export default function Footer(props) {
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
 
-  // Disable background scrolling
+  // Disable background scrolling, when modal is open
   useEffect(() => {
     if (modalOpen) {
       document.body.style.overflow = "hidden";
@@ -230,7 +229,6 @@ export default function Footer(props) {
         <div className="footer-content">
           <div className="footer-btn-wrapper">
             <button
-              // className="contact-btn"
               onClick={() => {
                 modalOpen ? close() : open();
               }}

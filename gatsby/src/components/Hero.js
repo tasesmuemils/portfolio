@@ -11,6 +11,7 @@ import Shapes from "../assets/Shapes.svg";
 import Letter from "../assets/letter.svg";
 import Modal from "./Modal";
 
+// Animations for different screens
 const floating = keyframes`
   0% {
     bottom: calc(100% - 70px);
@@ -43,17 +44,11 @@ const floatingLaptopL = keyframes`
 
 const floatingLaptop = keyframes`
   0% {
-    /* overflow: hidden;
-    -webkit-overflow-scrolling: touch; */
-    /* position: fixed; */
     bottom: calc(100% - 85px);
     left: 20%;
   }
 
   100% {
-    /* overflow: hidden;
-    -webkit-overflow-scrolling: touch; */
-    /* position: fixed; */
     left: calc(100% - 72px);
     bottom: 15px;
   }
@@ -61,18 +56,12 @@ const floatingLaptop = keyframes`
 
 const floatingTablet = keyframes`
   0% {
-    /* overflow: hidden;
-    -webkit-overflow-scrolling: touch; */
-    position: fixed;
     bottom: calc(100% - 33px);
     left: 50%;
   }
 
 
   100% {
-    /* overflow: hidden;
-    -webkit-overflow-scrolling: touch; */
-    position: fixed;
     left: calc(100% - 55px);
     bottom: 15px;
   }
@@ -80,18 +69,11 @@ const floatingTablet = keyframes`
 
 const floatingMobileS = keyframes`
   0% {
-    /* overflow: hidden;
-    -webkit-overflow-scrolling: touch; */
-    /* position: fixed; */
     bottom: calc(100% - 110px);
     left: 45%;
-    width: 0px;
   }
 
   100% {
-    /* overflow: hidden;
-    -webkit-overflow-scrolling: touch; */
-    /* position: fixed; */
     left: calc(100% - 52px);
     bottom: 15px;
   }
@@ -127,7 +109,6 @@ const HeroWrapperStyle = styled.div`
   .contact-btn {
     z-index: 1;
     padding: 15px 30px;
-    /* font-size: 20px; */
     letter-spacing: 1px;
     background-color: var(--blue);
     color: white;
@@ -175,7 +156,6 @@ const HeroWrapperStyle = styled.div`
         visibility: visible;
         font-size: 18px;
         width: 100px;
-        /* color: transparent; */
         transition: all 0.5s ease-in-out;
       }
     }
@@ -211,7 +191,6 @@ const HeroWrapperStyle = styled.div`
         visibility: hidden;
         font-size: 0px;
         width: 0px;
-        /* color: transparent; */
         transition: all 0.5s ease-in-out;
       }
     }
@@ -260,7 +239,6 @@ const HeroWrapperStyle = styled.div`
       padding: 10px 25px;
       letter-spacing: 0.1em;
       font-weight: 500;
-      /* transition: all 0.5s ease; */
     }
 
     .lets-talk-button {
@@ -550,7 +528,7 @@ export default function Hero() {
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
 
-  // Disable background scrolling
+  // Disable background scrolling, when modal is open
   useEffect(() => {
     if (modalOpen) {
       document.body.style.overflow = "hidden";
@@ -560,17 +538,6 @@ export default function Hero() {
   }, [modalOpen]);
 
   const buttonEl = useRef(null);
-
-  // useEffect(() => {
-  //   document.body.className = "controlAnimation";
-  //   buttonEl.current.className = "lt-btn-wrap";
-  //   const timer = setTimeout(() => {
-  //     document.body.className = "";
-  //     // buttonEl.current.className = "";
-  //   }, 500);
-
-  //   return () => clearTimeout(timer);
-  // }, []);
 
   console.log(inView, modalOpen);
   return (
@@ -597,12 +564,6 @@ export default function Hero() {
               >
                 <Letter className="letter" />
                 <span>LETS TALK!</span>
-
-                {/* {inView ? (
-                  <span>LETS TALK!</span>
-                ) : (
-                  <Letter className="letter" />
-                )} */}
               </button>
             </div>
           </HeroStyle>
