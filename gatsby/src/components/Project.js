@@ -226,7 +226,7 @@ export default function Project({
             <a href={projectLink} rel="noreferrer" target="_blank">
               <Button text="Preview" />
             </a>
-            {projectName === "Zeltabele.lv" ? (
+            {projectName === "Zeltabele.lv" || projectName === "Zepasaka.lv" ? (
               ""
             ) : (
               <a href={projectCode} rel="noreferrer" target="_blank">

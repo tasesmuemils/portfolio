@@ -4,6 +4,7 @@ import React from "react";
 import LogosRowOne from "../assets/Logos-first-row.svg";
 import LogosRowSecond from "../assets/Logos-second-row.svg";
 import LogosRowThird from "../assets/Logos-third-row.svg";
+import LogosRowFourth from "../assets/Logos_fourth_row.svg";
 // Styling
 import styled from "styled-components";
 import { device } from "./mediaQueries";
@@ -158,6 +159,7 @@ export default function Tools() {
             <LogosRowOne />
             <LogosRowSecond />
             <LogosRowThird />
+            <LogosRowFourth />
           </div>
         </div>
       </div>

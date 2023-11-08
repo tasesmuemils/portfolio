@@ -3,6 +3,8 @@ import React from "react";
 // Components
 import Project from "./Project";
 import Project1Icons from "../assets/Project_1_logos.svg";
+import ProjectZepasakaIcons from "../assets/Project_zepasaka_logos.svg";
+import ProjectZolesPunktiIcons from "../assets/Project_zoles_punkti_logos.svg";
 import Project2Icons from "../assets/Project_2_logos.svg";
 import Project3Icons from "../assets/Project_3_logos.svg";
 //Styling
@@ -70,6 +72,32 @@ export default function Projects({ projectsImg }) {
             projectLink={"https://www.zeltabele.lv/"}
           />
           <Project
+            project="WEBSITE"
+            projectName="Zepasaka.lv"
+            projectDescription="Single page website for kindergarten with lots of custom CSS animations"
+            projectLogos={<ProjectZepasakaIcons />}
+            projectImage={projectsImg[3]}
+            projectLink={"https://www.zepasaka.lv/"}
+          />
+          <Project
+            project="WEB APP"
+            projectName="Zoles punkti"
+            projectDescription="Web applications (with PWA functionality) for Latvian card game 'Zole', which allows you to count game points. No need for pen and paper"
+            projectLogos={<ProjectZolesPunktiIcons />}
+            projectImage={projectsImg[4]}
+            projectLink={"https://zolespunkti.lv/"}
+            projectCode={"https://github.com/tasesmuemils/zole"}
+          />
+          <Project
+            project="WEB APP"
+            projectName="Top Spotify Songs"
+            projectDescription="Check your top Spotify tracks based on calculated affinity."
+            projectLogos={<Project3Icons />}
+            projectImage={projectsImg[2]}
+            projectLink={"https://spotify-stats-app-blue.vercel.app/"}
+            projectCode={"https://github.com/tasesmuemils/spotify-stats-app"}
+          />
+          <Project
             project="WEB APP"
             projectName="Pokedex"
             projectDescription="Web application to check stats about first generation pokemons."
@@ -81,15 +109,6 @@ export default function Projects({ projectsImg }) {
             projectCode={
               "https://github.com/tasesmuemils/tasesmuemils.github.io/tree/master/projects/pokemon_app"
             }
-          />
-          <Project
-            project="WEB APP"
-            projectName="Top Spotify Songs"
-            projectDescription="Check your top Spotify tracks based on calculated affinity."
-            projectLogos={<Project3Icons />}
-            projectImage={projectsImg[2]}
-            projectLink={"https://spotify-stats-app-blue.vercel.app/"}
-            projectCode={"https://github.com/tasesmuemils/spotify-stats-app"}
           />
         </div>
       </div>
