@@ -549,7 +549,7 @@ export default function Hero() {
             <div ref={ref} className="hero-content">
               <div className="hero-content-wrapper">
                 <h1>Hi, I'm Emils.</h1>
-                <h2>Learning front-end web development</h2>
+                <h2>Front-end web developer</h2>
               </div>
             </div>
             <div
